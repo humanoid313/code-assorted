@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1309977682 source:f:\tantra\c\topcoder\howeasy\howeasy_main.cpp
+	"HowEasy.h"
+
+1309898943 f:\tantra\c\topcoder\howeasy\howeasy.h
+	<string>
+	<iostream>
+
+1309977601 source:f:\tantra\c\topcoder\howeasy\howeasy.cpp
+	"HowEasy.h"
+

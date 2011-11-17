@@ -1,0 +1,4 @@
+Viterbi: 
+Simulate the performance of the equalizer based on Viterbi algorithm.
+Code attribution:
+State generation and random number generation - Dr. Jacob Gunther

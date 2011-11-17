@@ -1,0 +1,31 @@
+struct delaration:
+
+struct wp_char{
+      char wp_cval;
+      short wp_font;
+      short wp_psize;
+}v1;
+
+struct wp_char v2;
+
+Strings:
+#include <cstring>
+int strlen(const char*)
+*str != 0
+
+#include <string>
+string st("Test string")
+int size = str.size()
+
+
+int *pint = new int(<def value>)
+int *pia = new int[4]
+
+Bitwise:
+~ 			Not
+<<			left shift
+>>			right shift
+&			
+|
+^			xor
+
