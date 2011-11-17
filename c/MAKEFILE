@@ -1,0 +1,8 @@
+$SOURCE = test
+all:
+	gcc -o $(SOURCE).o $(SOURCE).c
+	./$(SOURCE).o
+clean:
+	rm $(SOURCE).o
+compile:
+	gcc -c -Wall $(SOURCE).c
