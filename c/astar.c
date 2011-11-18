@@ -7,10 +7,32 @@ typedef struct node{
 	int posy;
 	int g;
 	int f;
-	node *prev;
-	node *next;
-}Node;
+	struct node *prev;
+	struct node *next;
+}node;
 
+void push(node **head_ref, int posx, int posy, int g, int f)
+{
+    // Pushes before
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->posx = posx;
+    newnode->posy = posy;
+	if((*head_ref) != NULL)
+	{
+		node *currnode = (*head_ref);		// Clarity
+		node *prevnode = currnode->prev;
+		node *nextnode = currnode->next;
+		newnode->g = prevnode->g + g;
+		newnode->h = prevnode->h + h;
+	}
+	else
+	{
+		newnode->g = g;
+		newnode->h = h;
+	} 
+    newnode->prev = (*head_ref);
+    (*head_ref) = newnode;
+}
 int main()
 {
 	FILE *fp;
@@ -21,7 +43,7 @@ int main()
 	int rowcount, colcount;						//	Count variables
 	int startx, starty, destx, desty;			//	Start and Dest positions
 	int curposx, curposy;						// 	Current position
-	Node *openlist = (Node *)malloc(sizeof (Node));
+
 
 	
 	// Read the contents of the file
@@ -54,20 +76,18 @@ int main()
 	rowcount = i;
 	
 	// Print the contents of the file
-	//printGrid(grid, rowcount, colcount );
+	printGrid(grid, rowcount, colcount );
 	
 	// Assign start node and put it on closed list
-	Node startnode, nextnode;
+	node startnode, nextnode;
 	startnode.posx = startx;
 	startnode.posy = starty;
 	startnode.g = 0;
 	startnode.f = 0;
 	startnode.prev = NULL;
-	startnode.next = NULL;
-	
+	startnode.next = NULL;	
 	return 0;
 }
-
 
 
 void printGrid(char grid[][MAXCOLCOUNT], int rowcount, int colcount)

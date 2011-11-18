@@ -1,4 +1,4 @@
-struct delaration:
+struct declaration:
 
 struct wp_char{
       char wp_cval;
